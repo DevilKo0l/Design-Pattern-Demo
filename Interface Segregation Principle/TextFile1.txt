@@ -11,11 +11,29 @@ ISP states that a client should not be forced to depend interfaces they dont use
 For example:
 DVD class doesnt need pages{get; set;} or author{get; set}
 
+
 2)
 Cutting down ILibrary class
 
-Every class has: LibraryId, Title properties
-=> Keep only 2 property in ILibray class
+Find the common properties between the classes and keep it in ILibrary interface
+=>Every class have: LibraryId, Title properties
+=> Keep only 2 properties in ILibray class
 
-Creat IBook interface: Author and Pages
+
+Creat IBook interface and find out the unique properties for Book class 
+Every book have: Author and Pages
 => this interface is inherited from ILibrary
+
+Every item is borrowable so we need to create Iborrowable
+IBorrowbale have: BorrowDate, Borrower, CheckOutDurationInDays, CheckIn, CheckOut, GetDueDate
+=> IBook and audio book can be inherited from Iborrowable but not ReferenceBook
+Because referencebook doesnt need checkout => if we apply IBorrowable to all class we violate ISP
+
+We create IBorrowableBook which is implemented from IBorrowable and IBook
+=> this interface is used to join IBorrowable and Ibook
+
+Implement IBorrowableBook interface to Book class
+=> Book class implement IBook, IBorrowable and ILibraryItem
+
+create IAudioBook which is implement ILibraryItem
+=> IAudioBook have RunTimeInMinutes method

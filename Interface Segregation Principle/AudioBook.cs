@@ -6,31 +6,28 @@ using System.Threading.Tasks;
 
 namespace Interface_Segregation_Principle
 {
-    public class AudioBook : ILibraryItem
+    public class AudioBook : IBorrowableAudiobook
     {
         public string LibraryId { get; set; }
         public string Title { get; set; }
-        public string Author { get; set; }
-        public int Pages { get; set; } = -1;
-        public int CheckOutDurationInDays { get; set; } = 14;
-        public string Borrower { get; set; }
-        public DateTime BorrowDate { get; set; }
-        public int RuntimeInMinutes { get; set; }
-
-        public void CheckOut(string borrower)
-        {
-            Borrower = borrower;
-            BorrowDate = DateTime.Now;
-        }
+        public int RuntimeInMinutes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime BorrowDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Borrower { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int CheckOutDurationInDays { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void CheckIn()
         {
-            Borrower = "";
+            throw new NotImplementedException();
+        }
+
+        public void CheckOut(string borrower)
+        {
+            throw new NotImplementedException();
         }
 
         public DateTime GetDueDate()
         {
-            return BorrowDate.AddDays(CheckOutDurationInDays);
+            throw new NotImplementedException();
         }
     }
 }

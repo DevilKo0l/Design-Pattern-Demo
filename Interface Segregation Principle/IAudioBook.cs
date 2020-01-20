@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interface_Segregation_Principle
 {
-    interface IBorrowable
+    interface IAudioBook : ILibraryItem
     {
+        int RuntimeInMinutes { get; set; }
     }
 }
