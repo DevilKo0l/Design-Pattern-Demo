@@ -1,0 +1,21 @@
+﻿1)
+First we have 4 classes implement ILibrary interface
+-AudioBook: ILibrary
+-Book:
+-DVD: 
+-ReferenceBook:
+
+=>This violate ISP
+ISP states that a client should not be forced to depend interfaces they dont use
+
+For example:
+DVD class doesnt need pages{get; set;} or author{get; set}
+
+2)
+Cutting down ILibrary class
+
+Every class has: LibraryId, Title properties
+=> Keep only 2 property in ILibray class
+
+Creat IBook interface: Author and Pages
+=> this interface is inherited from ILibrary
