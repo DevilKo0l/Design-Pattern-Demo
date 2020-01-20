@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Interface Segregation Principle\Interface Segregation Principle.csproj">
+      <Project>{6d32a742-8d07-4ad0-80a4-58d76f1cc3f2}</Project>
+      <Name>Interface Segregation Principle</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

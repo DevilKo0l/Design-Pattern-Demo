@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interface_Segregation_Principle;
 
 namespace Design_Pattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            IBorrwableDVD dvd = new DVD();
+            dvd.CheckIn();
         }
     }
 }

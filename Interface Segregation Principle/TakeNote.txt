@@ -35,5 +35,23 @@ We create IBorrowableBook which is implemented from IBorrowable and IBook
 Implement IBorrowableBook interface to Book class
 => Book class implement IBook, IBorrowable and ILibraryItem
 
-create IAudioBook which is implement ILibraryItem
+create IAudioBook which implement ILibraryItem
 => IAudioBook have RunTimeInMinutes method
+
+creat IBorrowableAudiobook which implement IBorrowable and IAudiobook
+
+Crate IDVD which implement ILibraryItem
+=> IDVD have: runtime and list off actors
+=> IAudioBook also have RunTimeInMintes method but it doesnt violate DRI principal dont repeat yourself
+because they have nothing in common, they both have runtime but they are 2 different things
+
+3)Why in DVD or AudioBook class we didnt implement directly IDVD and IBorrowable but we created IBorrowableDVD
+to connect IDVD and IBorrowable
+
+Because we can assess to all the information through IBorrowableDVD
+IBorrowableDVD dvd = new DVD();
+dvd can access both method in IDVD ,IBorrowable and ILibraryItem
+
+But if DVD implment IDVD and IBorrowable separately we have to create 2 instance of 2 interface
+
+

@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Interface_Segregation_Principle
 {
-    public class Book : IBorrowableBook
+    public class AudioBook : IBorrowableAudiobook
     {
-        public string LibraryId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Title { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
-        public string Author { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int pages { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public string LibraryId { get; set; }
+        public string Title { get; set; }
+        public int RuntimeInMinutes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime BorrowDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Borrower { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int CheckOutDurationInDays { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
+
         public void CheckIn()
         {
             throw new NotImplementedException();
         }
-        
+
         public void CheckOut(string borrower)
         {
             throw new NotImplementedException();
@@ -32,9 +25,5 @@ namespace Interface_Segregation_Principle
         {
             throw new NotImplementedException();
         }
-
-        
-
-        
     }
 }
